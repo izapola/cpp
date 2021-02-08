@@ -55,6 +55,23 @@ void ingresoDeInventario() {
     movimientoInventario(codigo, cantidad, "+");
 }
 
+void ajustepositivodeinventario(){
+    string codigo = "";
+    int cantidad =0;
+
+    system("cls");
+    cout<<endl;
+    cout<<"Ajuste positivo de inventario"<<endl;
+    cout<<"*****************************"<<endl;
+    cout<<"ingrese el codigo del producto: "<<endl;
+    cin>> codigo;
+    cout<<endl;
+    cout<<"ingrese la cantidad del producto: "<<endl;
+    cin>> cantidad;
+    cout<<endl;
+    
+     movimientoInventario(codigo, cantidad, "+");
+}
 void salidaDeInventario() {
     string codigo = "";
     int cantidad = 0;
@@ -73,6 +90,23 @@ void salidaDeInventario() {
     movimientoInventario(codigo, cantidad, "-");
 }
 
+void ajustenegativodeinventario(){
+    string codigo = "";
+    int cantidad =0;
+
+    system("cls");
+    cout<<endl;
+    cout<<"Ajuste negativo de inventario"<<endl;
+    cout<<"*****************************"<<endl;
+    cout<<"ingrese el codigo del producto: "<<endl;
+    cin>> codigo;
+    cout<<endl;
+    cout<<"ingrese la cantidad del producto: "<<endl;
+    cin>> cantidad;
+    cout<<endl;
+    
+     movimientoInventario(codigo, cantidad, "-");
+}
 int main(int argc, char const *argv[])
 {
     int opcion = 0;
@@ -88,6 +122,8 @@ int main(int argc, char const *argv[])
         cout << "1 - Productos" << endl;
         cout << "2 - Ingreso de Inventario" << endl;
         cout << "3 - Salida de Inventario" << endl;
+        cout << "4 - ajuste negativo de inventario" << endl;
+        cout << "5 - ajuste positivo de inventario" << endl;
         cout << "0 - Salir" << endl;
         cout << "Ingrese una opcion del menu: ";
         cin >> opcion;
@@ -103,7 +139,15 @@ int main(int argc, char const *argv[])
         case 3:
             salidaDeInventario();
             break;
-        
+
+        case 4:
+            ajustenegativodeinventario();
+            break;    
+
+        case 5:
+            ajustepositivodeinventario();
+            break;    
+
         default:
             break;
         }
